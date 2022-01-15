@@ -1,0 +1,636 @@
+hey .. i installed a pata card in my comp with __number__ hd s on it dmesg says the card is there ( it seems to be using the libata module ) but the drives on the card are not showing up .. has someone experience with these kinds of cards
+maybe the dmesg has some clue can you post it to pastebin ??
+thats a bit hard because its a different comp with no net but the line that caught my eye was ata2 sata link down ( sstatus __number__ scontrol __number__ )
+it is sata or pata ??
+its a sata card with a pata connector as well
+that s the normal msg for a not used sata port ( i have three of them on my pc )
+there are no extra devices ( such as sda or hde )
+what chip does the card uses
+do you see sata_via and pata_via loaded
+libata under lsmod shows the sata_via sata_promise
+i try a modprobe
+nope modprobe pata_via module pata-via not found
+nope modprobe pata_via module pata_via not found sorry
+try this one then « sudo modprobe via82cxxx »
+that is already loaded .. part of ide_core in lsmod but no __path__ for the disks :(
+1 hey .. i installed a pata card in my comp with __number__ hd s on it dmesg says the card is there ( it seems to be using the libata module ) but the drives on the card are not showing up .. has someone experience with these kinds of cards maybe the dmesg has some clue can you post it to pastebin ?? thats a bit hard because its a different comp with no net but the line that caught my eye was ata2 sata link down ( sstatus __number__ scontrol __number__ ) it is sata or pata ?? its a sata card with a pata connector as well that s the normal msg for a not used sata port ( i have three of them on my pc ) there are no extra devices ( such as sda or hde ) what chip does the card uses do you see sata_via and pata_via loaded libata under lsmod shows the sata_via sata_promise i try a modprobe nope modprobe pata_via module pata-via not found nope modprobe pata_via module pata_via not found sorry try this one then « sudo modprobe via82cxxx » that is already loaded .. part of ide_core in lsmod but no __path__ for the disks :(
+i assume you mean __path__ is there a configure script in that directory
+nope
+is there a readme or install
+yea it only tells me this program has no warranty
+when you ls is there anything that shows up as green
+libfmodex so numbers here and yamipod
+run __path__
+updating playcounts ... is what it says
+along with an error about not copying the lib to usr/lib and i'l haveno audio which is fine i just need to put songs onto my ipod
+do you have a link to this package
+__url__
+ok i tried to put songs onto my ipod in rhythmbox and they are not there but it lists them
+now i open yamipod and it says the songs are there on my ipod but they are n't when i liten to it
+wtf how do i finalize my aditions to my ipod
+calm down i am trying to see what this package is i do n't have an ipod so i am not completely certain
+i m trying ot copy songs onot my ipod i doubt this will work though
+or it says to do something and that is the best way to do it
+ok the readme says to do this sudo cp libfmodex so __number__ __number__ __path__ && sudo cp yamipod __path__
+i do n't need audio for yamipod i just need to put songs onto my ipod
+after you do that run yamipod i do n't understand why drag and drop does n't work in rhythmbox i ve tried gtk pod and it would n't even detect my ipod telling me i had some __path__ error
+1 i assume you mean __path__ is there a configure script in that directory nope is there a readme or install yea it only tells me this program has no warranty when you ls is there anything that shows up as green libfmodex so numbers here and yamipod run __path__ updating playcounts ... is what it says along with an error about not copying the lib to usr/lib and i'l haveno audio which is fine i just need to put songs onto my ipod do you have a link to this package __url__ ok i tried to put songs onto my ipod in rhythmbox and they are not there but it lists them now i open yamipod and it says the songs are there on my ipod but they are n't when i liten to it wtf how do i finalize my aditions to my ipod calm down i am trying to see what this package is i do n't have an ipod so i am not completely certain i m trying ot copy songs onot my ipod i doubt this will work though or it says to do something and that is the best way to do it ok the readme says to do this sudo cp libfmodex so __number__ __number__ __path__ && sudo cp yamipod __path__ i do n't need audio for yamipod i just need to put songs onto my ipod after you do that run yamipod i do n't understand why drag and drop does n't work in rhythmbox i ve tried gtk pod and it would n't even detect my ipod telling me i had some __path__ error
+can anyone help me .. i ve tried everything that i could think of .. does anyone have cs s working on linux with sound steam working good etc
+are you using wine
+yes cs works fine but no sound ..
+which sound driver are you using in winecfg
+oss
+my problem is ( i think ) is that i dont have the alsas oss emulator working correctly
+i had a lot of trouble with sound in wine myself i think i ended up installing jack and using that driver
+have you tried the other drivers
+yes but the only driver cs s will work properly under is oss
+any information you could share with me would help alot .. i have been at this for __number__ days and i really dont wanna go back to windows
+i ve never used the alsa oss emulator sorry did you ever run any game under wine or what emulator are you using now
+1 can anyone help me .. i ve tried everything that i could think of .. does anyone have cs s working on linux with sound steam working good etc are you using wine yes cs works fine but no sound .. which sound driver are you using in winecfg oss my problem is ( i think ) is that i dont have the alsas oss emulator working correctly i had a lot of trouble with sound in wine myself i think i ended up installing jack and using that driver have you tried the other drivers yes but the only driver cs s will work properly under is oss any information you could share with me would help alot .. i have been at this for __number__ days and i really dont wanna go back to windows i ve never used the alsa oss emulator sorry did you ever run any game under wine or what emulator are you using now
+yes well the topic does not lie
+it will be ready for testing when the merge is finished
+i m sure that mirror will be back up eventually
+er are you sure about that
+the livecd image no longer carries an rc tag and i m pretty sure it s final
+please stop pasting in the distrowatch stats every day
+people like it
+people who need to see those stats can go to distrowatch themselves please do n't paste it into the channel all the time it s hard enough to follow all the scrollback without stuff like that
+it s once a day and we will have a vote who wants it pasted vote now who every doesnt also vote now
+great even more scrollback if people want it they can get it from distrowatch please stop pasting it in here
+why should i stop people like to know and do n't goto distrowatch daily let alone off irc
+people want to know other people find it inconvenient and that it puts them out i ve asked you nicely please just stop it
+of course it will run
+( note that x was originally developed on pdps )
+ok how many mhz is a __number__
+cat foo cpp start writing end with ^d
+try it
+just sit tight and wait
+no
+too late by far for hoary
+1 yes well the topic does not lie it will be ready for testing when the merge is finished i m sure that mirror will be back up eventually er are you sure about that the livecd image no longer carries an rc tag and i m pretty sure it s final please stop pasting in the distrowatch stats every day people like it people who need to see those stats can go to distrowatch themselves please do n't paste it into the channel all the time it s hard enough to follow all the scrollback without stuff like that it s once a day and we will have a vote who wants it pasted vote now who every doesnt also vote now great even more scrollback if people want it they can get it from distrowatch please stop pasting it in here why should i stop people like to know and do n't goto distrowatch daily let alone off irc people want to know other people find it inconvenient and that it puts them out i ve asked you nicely please just stop it of course it will run ( note that x was originally developed on pdps ) ok how many mhz is a __number__ cat foo cpp start writing end with ^d try it just sit tight and wait no too late by far for hoary
+what s wrong with using numbers in chmod
+i m curious because i ve always used the number arguments to chmod
+if i have to explain it it s probably hopeless but what just happened should give you an idea
+it s horribly error prone and totally unnecessary
+i ca n't remember the question long enough to type the answer
+well you can be retarted without being a shit :)
+and vice versa but neither belong in this channel
+sure
+yes the default is to run it from inetd
+the program name is in telnetd
+well then doubly he did n't delete telnetd by installing inetd :)
+yes i know but he is getting a message with a blank socket number not if he has no partitions
+1 what s wrong with using numbers in chmod i m curious because i ve always used the number arguments to chmod if i have to explain it it s probably hopeless but what just happened should give you an idea it s horribly error prone and totally unnecessary i ca n't remember the question long enough to type the answer well you can be retarted without being a shit :) and vice versa but neither belong in this channel sure yes the default is to run it from inetd the program name is in telnetd well then doubly he did n't delete telnetd by installing inetd :) yes i know but he is getting a message with a blank socket number not if he has no partitions
+noob question here when it says log of gnome how do i do that
+*log out of gnome
+the off button on the top menu bar
+oh they re sending you to a virtual console alt-ctl-f1 - f6
+so either f1 through f6
+exactly there are __number__ virtual consoles you can use you can reach them at any time during your session
+hangover from the pre gui days and still useful
+i m back :) i did n't know how to get out of that console when i hit alt-ctl-f1-f6 does it log me completely out of gnome or can i return to it and my open applications
+sorry the gui is on alt-ctl-f7 :)
+thanks dude much appreciated
+another question is the console just like a terminal window for most purposes yes no cut and paste ( but if you install gpm you can cut and paste between terminals )
+1 noob question here when it says log of gnome how do i do that *log out of gnome the off button on the top menu bar oh they re sending you to a virtual console alt-ctl-f1 - f6 so either f1 through f6 exactly there are __number__ virtual consoles you can use you can reach them at any time during your session hangover from the pre gui days and still useful i m back :) i did n't know how to get out of that console when i hit alt-ctl-f1-f6 does it log me completely out of gnome or can i return to it and my open applications sorry the gui is on alt-ctl-f7 :) thanks dude much appreciated another question is the console just like a terminal window for most purposes yes no cut and paste ( but if you install gpm you can cut and paste between terminals )
+can gparted combine __number__ unallocated spaces
+same drive
+same physical drive
+yes c-ron
+on __number__ separate drives or partitions
+type the name of the person you are talking to or at least the first few letters then tab to have them added to your conversation yes
+1 can gparted combine __number__ unallocated spaces same drive same physical drive yes c-ron on __number__ separate drives or partitions type the name of the person you are talking to or at least the first few letters then tab to have them added to your conversation yes
+i think gmail use __number__ for smtp
+back at ya
+hello
+when i installed ubuntu i chose yes to encrypt my home folder how can i kknow it s really encrypted
+type that in terminal
+sudo apt-get install thunderbird
+open terminal type sudo mount
+it will show you it is encrypted
+thats for your __path__ private
+type ecryptfs .. does that mean its encrypted
+yes sound right
+1 i think gmail use __number__ for smtp back at ya hello when i installed ubuntu i chose yes to encrypt my home folder how can i kknow it s really encrypted type that in terminal sudo apt-get install thunderbird open terminal type sudo mount it will show you it is encrypted thats for your __path__ private type ecryptfs .. does that mean its encrypted yes sound right
+i ca n't get dvd working on my computer it do n't work help
+does n't work is a strong statement does it sit on the couch all day does it want more money is it on irc all the time please be specific examples of what does n't work tend to help too
+for multimedia issues this page has useful information __url__ - see also __url__ - but please use free formats if you can __url__
+to reset the panel to defaults type this in a terminal « gconftool -- recursive-unset __path__ && killall gnome-panel »
+please see my private message
+en la mayoría de canales ubuntu se comunica en inglés para ayuda en español por favor entre en los canales #ubuntu-es o #kubuntu-es
+en la mayoría de canales ubuntu se comunica en inglés para ayuda en español por favor entre en los canales #ubuntu-es o #kubuntu-es en la mayoría de canales de ubuntu se habla sólo en inglés si busca ayuda en español o charlar entra en el canal #ubuntu-es escribe __path__ #ubuntu-es ( sin comillas ) y dale a enter
+1 i ca n't get dvd working on my computer it do n't work help does n't work is a strong statement does it sit on the couch all day does it want more money is it on irc all the time please be specific examples of what does n't work tend to help too for multimedia issues this page has useful information __url__ - see also __url__ - but please use free formats if you can __url__ to reset the panel to defaults type this in a terminal « gconftool -- recursive-unset __path__ && killall gnome-panel » please see my private message en la mayoría de canales ubuntu se comunica en inglés para ayuda en español por favor entre en los canales #ubuntu-es o #kubuntu-es en la mayoría de canales ubuntu se comunica en inglés para ayuda en español por favor entre en los canales #ubuntu-es o #kubuntu-es en la mayoría de canales de ubuntu se habla sólo en inglés si busca ayuda en español o charlar entra en el canal #ubuntu-es escribe __path__ #ubuntu-es ( sin comillas ) y dale a enter
+can some one give a little help with burning an iso i followed the wiki __url__ and i still cant get it to work
+seth it is just a cd-r
+read my pm to you
+i dont have a pm form you use dmesg command to see all devices
+1 can some one give a little help with burning an iso i followed the wiki __url__ and i still cant get it to work seth it is just a cd-r read my pm to you i dont have a pm form you use dmesg command to see all devices
+sudo chroot __path__
+chroot failed to run command __path__ exec format error
+sudo mount -- bind __path__ __path__
+file __path__
+__path__ elf 32-bit lsb executable intel __number__ version __number__ ( sysv ) dynamically linked ( uses shared libs ) for gnu/linux __number__ __number__ stripped
+so fine then i wonder about failing chroot
+so now what
+sudo mkdir __path__ && sudo mount -- bind __path__ __path__ && sudo chroot __path__
+pts && sudo chroot __path__
+that was one command line all in one what gives
+grub-install -- recheck __path__
+aha let s asume it s chrooted try
+grub-install __path__
+what happened last time you tried to boot just a blank screen
+i have a hp and it goes to the to the enter bios if i want goes black and happens again
+well strange you got these os-loader partition is there a cd burner or a usb stick handy we could try grub-rescue cd but i guess there is only one pc so would have to try yourself
+ya i am the only one with a burner but i have a usb stick
+__url__
+wget __url__ put it on usb
+1 sudo chroot __path__ chroot failed to run command __path__ exec format error sudo mount -- bind __path__ __path__ file __path__ __path__ elf 32-bit lsb executable intel __number__ version __number__ ( sysv ) dynamically linked ( uses shared libs ) for gnu/linux __number__ __number__ stripped so fine then i wonder about failing chroot so now what sudo mkdir __path__ && sudo mount -- bind __path__ __path__ && sudo chroot __path__ pts && sudo chroot __path__ that was one command line all in one what gives grub-install -- recheck __path__ aha let s asume it s chrooted try  grub-install __path__ what happened last time you tried to boot just a blank screen i have a hp and it goes to the to the enter bios if i want goes black and happens again well strange you got these os-loader partition is there a cd burner or a usb stick handy we could try grub-rescue cd but i guess there is only one pc so would have to try yourself ya i am the only one with a burner but i have a usb stick __url__ wget __url__ put it on usb
+dpkg parse error in file __path__ near line __number__ package openoffice.org2-help-en-us':
+when trying to install apache2 i get this error preconfiguring packages ...
+missing version
+e sub-process __path__ returned an error code ( __number__ )
+how do you do thatr
+just apt-get which ever is default but i figured it out
+for dapper help you might want to try #ubuntu+1
+#ubuntu+1 is for dapper this channel isnt
+if you havent already noticed dapper adn breezy are not the same
+ubuntu-desktop can be removed
+what will removing ubuntu-desktop do
+nothing
+what is it then
+read your pm please
+please stop playing with the bot i was n't playing with the bot
+1 dpkg parse error in file __path__ near line __number__ package openoffice.org2-help-en-us': when trying to install apache2 i get this error preconfiguring packages ... missing version e sub-process __path__ returned an error code ( __number__ ) how do you do thatr  just apt-get which ever is default but i figured it out for dapper help you might want to try #ubuntu+1 #ubuntu+1 is for dapper this channel isnt if you havent already noticed dapper adn breezy are not the same ubuntu-desktop can be removed what will removing ubuntu-desktop do nothing what is it then read your pm please please stop playing with the bot i was n't playing with the bot
+tuumi | software
+software tuumi
+thank you
+you mean flashplugin nonfree
+yes
+thank you
+yw
+what shockwave is not available for linux ...
+it is available but not good
+i ca n't find it .... i do n't think it exists ... can you give me a link
+there is a plugin swfdec for linux which isnt good and you can install windows version in linux with tweaks here
+__url__
+thats what i said it isnt good for linux
+swfdec is for flash ... and shockwave in wine is not really shockwave in linux ...
+... ok ... so there is no shockwave for linux :)
+i agree here is something for us __url__ i just built a machine today should i manually set swap or should i just use entire disk which will be more beneficial
+1 tuumi | software software tuumi thank you you mean flashplugin nonfree yes thank you yw what shockwave is not available for linux ... it is available but not good i ca n't find it .... i do n't think it exists ... can you give me a link there is a plugin swfdec for linux which isnt good and you can install windows version in linux with tweaks here __url__ thats what i said it isnt good for linux swfdec is for flash ... and shockwave in wine is not really shockwave in linux ... ... ok ... so there is no shockwave for linux :) i agree here is something for us __url__ i just built a machine today should i manually set swap or should i just use entire disk which will be more beneficial
+amd __number__ __number__
+__number__ gig ram
+nvidia __number__ gt
+i m getting an error wrong architecture i386
+what kinda computer are you installing to
+did you install 32bit or 64bit os
+then you just need to enable the right repositories in your __path__ list file
+then become root by typing sudo -s
+and then you can aptitude update && aptitude upgrade
+there s graphical interface but as long as you can type ... it s better to learn the linux filesystem anyway
+i did that command
+now you can delete everything in that file and copy this sources list file by highlighting it and then pasting it by middle clicking into the text editor !!
+i did it now type in aptitude update && aptitude upgrade
+1 amd __number__ __number__ __number__ gig ram nvidia __number__ gt i m getting an error wrong architecture i386 what kinda computer are you installing to did you install 32bit or 64bit os then you just need to enable the right repositories in your __path__ list file then become root by typing sudo -s and then you can aptitude update && aptitude upgrade there s graphical interface but as long as you can type ... it s better to learn the linux filesystem anyway i did that command now you can delete everything in that file and copy this sources list file by highlighting it and then pasting it by middle clicking into the text editor !! i did it now type in aptitude update && aptitude upgrade
+type sudo apt-get install j2re __number__
+whats it say now
+did you try bimberi s way
+it says ackage j2re __number__ is not available but is referred to by another package
+use these repos from here __url__
+then update
+even if i have hoary
+what you said you using breezy
+i m using hoary
+so what should i do if i m using hoary
+update to breezy :)
+install it using apt-get
+type sudo apt-get install j2re __number__
+thanx for helpming me
+dont thank me thank the person who worketh through me :)
+and it was bimberi who helped the most
+where did you download limewire from anyway> just curious
+i cant downbload from there :( keeps stopping
+do you have a server you can let me download limewire from please
+its ok i got it already now thanks anyway :)
+1 type sudo apt-get install j2re __number__ whats it say now did you try bimberi s way it says ackage j2re __number__ is not available but is referred to by another package use these repos from here __url__ then update even if i have hoary what you said you using breezy i m using hoary so what should i do if i m using hoary update to breezy :) install it using apt-get type sudo apt-get install j2re __number__ thanx for helpming me dont thank me thank the person who worketh through me :) and it was bimberi who helped the most where did you download limewire from anyway> just curious i cant downbload from there :( keeps stopping do you have a server you can let me download limewire from please its ok i got it already now thanks anyway :)
+you should see workgroup and vboxsvr
+i tried the \\vboxsvr and it could n't find it
+or something like that
+nothing
+try network places
+yeah that s where i m at it s an empty pane
+then try map network drive
+i ca n't go to \\vboxsvr though that s the problem
+then try map network drive
+where share is the name of the share
+system error __number__ network name cannot be found
+thats the problem i had with xp
+network didnt work
+any idea how to fix it
+scrap xp and use __number__
+no can do :(
+try using a different card setup in vb settings
+and your using xvm and not ose
+yeah
+your going to have to set up a non nat network connection in xp which in virtual box is impossible unless its been fixed since i had the prob to be able to ping your host so is there just no way to do it why can i do it with seemingly random installs of vbox and xp but seemingly random others ca n't
+1 you should see workgroup and vboxsvr i tried the \\vboxsvr and it could n't find it or something like that nothing try network places yeah that s where i m at it s an empty pane then try map network drive i ca n't go to \\vboxsvr though that s the problem then try map network drive where share is the name of the share system error __number__ network name cannot be found thats the problem i had with xp network didnt work any idea how to fix it scrap xp and use __number__ no can do :( try using a different card setup in vb settings and your using xvm and not ose yeah your going to have to set up a non nat network connection in xp which in virtual box is impossible unless its been fixed since i had the prob to be able to ping your host so is there just no way to do it why can i do it with seemingly random installs of vbox and xp but seemingly random others ca n't
+i can write english
+:p
+beachtet mich
+but nobody wants to help mi with ma logitech g15 problem
+please ask a ubuntu related support question
+since you have n't told anyone wha your problem is this is understandable no one can help you
+is this g15composer a linux app
+my g15composer won t work with ttf fonts
+and the error is
+jes
+yes
+g15composer symbol lookup error g15composer undefined symbol g15r_ttfload
+then you most likely did n't compile it right
+source packages grep the sourcecode for g15r_ttfload and see where it is defined
+1 i can write english :p beachtet mich but nobody wants to help mi with ma logitech g15 problem please ask a ubuntu related support question since you have n't told anyone wha your problem is this is understandable no one can help you is this g15composer a linux app my g15composer won t work with ttf fonts and the error is jes yes g15composer symbol lookup error g15composer undefined symbol g15r_ttfload then you most likely did n't compile it right source packages grep the sourcecode for g15r_ttfload and see where it is defined
+no game cd that has music tracks
+loo for it in __path__
+you do n't read __path__ devices directly normally
+i didnt say that developers need to make exceptions to data cds with audio tracks
+ah i see what you mean
+wasnt shouting out of context thats sternly saying something
+i know only teasing ;)
+a useful trick use a mirror that s not one of the ubuntu country ones like find a university or other institution it s much faster
+now if dist-upgrade did that as well
+i ve been using mirrors.kernel.org for everything including dist-upgrades
+could be suggestion for apt if main one fails to connect try alternates .? or does it do it yet
+no not that i know of gutsy has a nifty guide to available repos and will even help you choose the best one ( software sources under admin )
+the most critical thing i can tell you about gnupg is treat your secret key like gold frustrating to misplace or delete it
+create a revocation certificate burn it and the secret key to different cd s and store them in different places i keep losing keys so i do n't currently have one
+yes i was listening but had nothing to offer on what you followed up on i was still sharing the first question just general experience but i m done :)
+yes and i do understand your frustration i was sharing mine and it did n't help yours at all
+yes i guess i assumed he had that :)
+i meant on the same hardware
+heh xfce was much faster on the p3 i ran
+lol it definitely has potential it s long but definitely true
+1 no game cd that has music tracks loo for it in __path__ you do n't read __path__ devices directly normally i didnt say that developers need to make exceptions to data cds with audio tracks ah i see what you mean wasnt shouting out of context thats sternly saying something i know only teasing ;) a useful trick use a mirror that s not one of the ubuntu country ones like find a university or other institution it s much faster now if dist-upgrade did that as well i ve been using mirrors.kernel.org for everything including dist-upgrades could be suggestion for apt if main one fails to connect try alternates .? or does it do it yet no not that i know of gutsy has a nifty guide to available repos and will even help you choose the best one ( software sources under admin ) the most critical thing i can tell you about gnupg is treat your secret key like gold frustrating to misplace or delete it create a revocation certificate burn it and the secret key to different cd s and store them in different places i keep losing keys so i do n't currently have one yes i was listening but had nothing to offer on what you followed up on i was still sharing the first question just general experience but i m done :) yes and i do understand your frustration i was sharing mine and it did n't help yours at all yes i guess i assumed he had that :) i meant on the same hardware heh xfce was much faster on the p3 i ran lol it definitely has potential it s long but definitely true
+yeah it installs a bootloader and whatnot but you need an ubuntu disk image to create it
+i know that but if i write the image to the usb drive using dd it does n't work
+yeah you ca n't just copy the thing over the disk creator does a bunch of magic making sure that everything is copied bit-for-bit
+yes the communty help documentation has an article on it
+and there is a special filesystem it uses called squashfs that needs to be set up properly for everything to work
+ok so imagine i do n't have a disk creator is there a set of instructions for how to install the iso to a usb drive and make it bootable
+__url__
+ah well that might be a graphical issue it might be an issue with the usb stick you re using or it could be a wholly different problem that i ve never heard of :p
+centrino wireless ..?
+ooops sorry
+__url__
+when it booted did you at least see the menu giving you the options about how to use the usb
+no it was just black i ll try following the instructions again and get back to you
+ok sorry about not being more helpful
+not your fault i m not really sure why you all have created an iso that is n't bootable *every*one else has :-/
+how is your display connected to your computer
+it s a laptop when i say black screen i should have said blank screen blinking cursor
+it sounds like the image did n't get written correctly you might try using unetbootin
+__url__ if that does n't work then i would have to say there is probably something wrong with the flash drive you re using
+i take it you got the liveusb to work yeah i had to use unetbootin annoying but such is life i m more baffled by the lack of a tor package ..
+1 yeah it installs a bootloader and whatnot but you need an ubuntu disk image to create it i know that but if i write the image to the usb drive using dd it does n't work yeah you ca n't just copy the thing over the disk creator does a bunch of magic making sure that everything is copied bit-for-bit yes the communty help documentation has an article on it and there is a special filesystem it uses called squashfs that needs to be set up properly for everything to work ok so imagine i do n't have a disk creator is there a set of instructions for how to install the iso to a usb drive and make it bootable __url__ ah well that might be a graphical issue it might be an issue with the usb stick you re using or it could be a wholly different problem that i ve never heard of :p centrino wireless ..? ooops sorry __url__ when it booted did you at least see the menu giving you the options about how to use the usb no it was just black i ll try following the instructions again and get back to you ok sorry about not being more helpful not your fault i m not really sure why you all have created an iso that is n't bootable *every*one else has :-/ how is your display connected to your computer it s a laptop when i say black screen i should have said blank screen blinking cursor it sounds like the image did n't get written correctly you might try using unetbootin __url__ if that does n't work then i would have to say there is probably something wrong with the flash drive you re using i take it you got the liveusb to work yeah i had to use unetbootin annoying but such is life i m more baffled by the lack of a tor package ..
+i do n't think reinstalling x is what you want
+what happens when you start your computer
+now it says that im having problem with gnome power management but before i didnt say anything
+how do i check that
+what are the last few lines of dmesg
+open a terminal and type dmesg | tail
+then copy-paste the results to paste ubuntu com
+ok think i have to close irssi to check ... or is there anyway to split the terminal window ..
+you are in the console you can press alt+right to go to another console
+ok thanks
+what was the name of the log again dmsg
+type dmesg | tail
+dont see anything strange here
+what about in the file __path__ __number__ log ( type less __path__ __number__ log )
+at least no ee
+what happens if you run sudo service gdm start "? ( that should start the x server )
+srtart job is already running start
+could this be in another terminal window maybe
+check terminal __number__ ( ctl+alt+f7 ) and __number__
+go back to the console you were in and try sudo service gdm restart an underscore blinking in the upper left corner
+1 i do n't think reinstalling x is what you want what happens when you start your computer now it says that im having problem with gnome power management but before i didnt say anything how do i check that what are the last few lines of dmesg open a terminal and type dmesg | tail then copy-paste the results to paste ubuntu com ok think i have to close irssi to check ... or is there anyway to split the terminal window .. you are in the console you can press alt+right to go to another console ok thanks what was the name of the log again dmsg type dmesg | tail dont see anything strange here what about in the file __path__ __number__ log ( type less __path__ __number__ log ) at least no ee what happens if you run sudo service gdm start "? ( that should start the x server ) srtart job is already running start could this be in another terminal window maybe check terminal __number__ ( ctl+alt+f7 ) and __number__ go back to the console you were in and try sudo service gdm restart an underscore blinking in the upper left corner
+we re organising a huge linux event
+hey guys
+i need some help
+the event is on __number__ __number__ __number__ dec though
+some = atleast about a __number__
+the biggest in this part of the world at bangalore india called linux bangalore/2004
+and we re wondering if we can get some ubuntu cds to give away
+__url__ too short notice
+1 we re organising a huge linux event hey guys i need some help the event is on __number__ __number__ __number__ dec though some = atleast about a __number__ the biggest in this part of the world at bangalore india called linux bangalore/2004 and we re wondering if we can get some ubuntu cds to give away __url__ too short notice
+so question about using my wifi adapter my notebook has an internal intel pro/wireless 3945abg network controller if i go lspci it shows up so i take that to mean that the hardware is detected and a driver is installed when i type iwconfig i see lo eth0 irda0 sit0 but no wifi0 or wlan0 is there something else i need to do use the wireless device
+did you install additional drivers for your __number__ card
+no i have n't installed any additional driver sfor the card
+i have read a few sites of installing ubuntu on notebooks that use this card and they all say it works out of the box with __number__ and __number__
+i have not installed wpasupplicant package maybe that could be it
+you do n't need wpasupplicant to see your device
+i have the same card as you ... i forget what i did to make it work but i believe there are some nonfree drivers
+there is a sourceforge project iw3945.sf.net i think there is also the possibility of using ndiswrapper i think
+non-free drivers you mean binary drivers maybe from intel
+you might want to check out this link __url__
+its hard for me to use the web right now i am in console only mode right now installing kubuntu-desktop right now but that has a few hours remaining and do n't have lynx installed :(
+care to paraphrase that for me
+do you have linux-restricted-modules-generic installed
+i am not sure this is a fresh ubuntu console-only install right now
+so besides installing irssi i have n't done anything
+i can install that package though
+i think you ll need it in the bug ( not really a bug ) they show output of cat __path__ 0c\ __number__ __path__ i have a __path__ directory all the files there
+1 so question about using my wifi adapter my notebook has an internal intel pro/wireless 3945abg network controller if i go lspci it shows up so i take that to mean that the hardware is detected and a driver is installed when i type iwconfig i see lo eth0 irda0 sit0 but no wifi0 or wlan0 is there something else i need to do use the wireless device did you install additional drivers for your __number__ card no i have n't installed any additional driver sfor the card i have read a few sites of installing ubuntu on notebooks that use this card and they all say it works out of the box with __number__ and __number__ i have not installed wpasupplicant package maybe that could be it you do n't need wpasupplicant to see your device i have the same card as you ... i forget what i did to make it work but i believe there are some nonfree drivers there is a sourceforge project iw3945.sf.net i think there is also the possibility of using ndiswrapper i think non-free drivers you mean binary drivers maybe from intel you might want to check out this link __url__ its hard for me to use the web right now i am in console only mode right now installing kubuntu-desktop right now but that has a few hours remaining and do n't have lynx installed :( care to paraphrase that for me do you have linux-restricted-modules-generic installed i am not sure this is a fresh ubuntu console-only install right now so besides installing irssi i have n't done anything i can install that package though i think you ll need it in the bug ( not really a bug ) they show output of cat __path__ 0c\ __number__ __path__ i have a __path__ directory all the files there
+the lines are simply cp __path__ song mp3 thedirectoryinwhichiwantthem
+uh i m not sure what i need to understand i got your pm but my script is full of lines that only differ as far as the filename is concerned
+and the filenames constitute the problem since they have spaces
+i ve just tried to make an absolutely trivial copying script by search and replacing a playlist
+yes the paths are with spaces
+it s very very long simply lines like this
+are you quoting the paths that have spaces
+and what happens instead
+what editor did you use to write it
+do this cat -e thescript and paste a sample line here cat -e thescript and paste a sample line here
+1 the lines are simply cp __path__ song mp3 thedirectoryinwhichiwantthem uh i m not sure what i need to understand i got your pm but my script is full of lines that only differ as far as the filename is concerned and the filenames constitute the problem since they have spaces i ve just tried to make an absolutely trivial copying script by search and replacing a playlist yes the paths are with spaces it s very very long simply lines like this are you quoting the paths that have spaces and what happens instead what editor did you use to write it do this cat -e thescript and paste a sample line here cat -e thescript and paste a sample line here
+isnt it supposed to go up when i plugin the adapter
+you mean ac power
+yeah to the laptop
+no it is only supposed to go up when you run cpu-intensive tasks
+good :)
+64bit supports more ram and is a bit faster especially when it comes to numbercrunching and memory i/o intensive apps such as video encoding
+stefg i see thanks
+have you enabled the proposed repository if so you can work out exactly what this update is with apt-cache policy packagename apt-cache show packagename
+no but version numbers
+also you well have to protect the braces e.g. {} or \{\}
+maybe it s mounted
+nope
+and you ve started it with gksudo
+yep i can do things with the free space but i can not make my ext3 use the free space
+can you pastebin the output from sudo fdisk -l for that disk
+__url__
+you re looking to expand __path__ into the space you freed by removing __path__
+no sorry i see that would n't make sense as sda2 is swap
+yes :)
+sda3 i want to exapand is there free space behind sda3
+1 isnt it supposed to go up when i plugin the adapter you mean ac power yeah to the laptop no it is only supposed to go up when you run cpu-intensive tasks good :) 64bit supports more ram and is a bit faster especially when it comes to numbercrunching and memory i/o intensive apps such as video encoding stefg i see thanks have you enabled the proposed repository if so you can work out exactly what this update is with apt-cache policy packagename apt-cache show packagename no but version numbers also you well have to protect the braces e.g. {} or \{\} maybe it s mounted nope and you ve started it with gksudo yep i can do things with the free space but i can not make my ext3 use the free space can you pastebin the output from sudo fdisk -l for that disk __url__ you re looking to expand __path__ into the space you freed by removing __path__ no sorry i see that would n't make sense as sda2 is swap yes :) sda3 i want to exapand is there free space behind sda3
+a ndy80 yes
+can you help me with my wifi prob
+how do you switch channel $
+depends on your client :)
+this is #ubuntu not #windows-bashing
+sry it was stronger then myself -x-
+this is a support room offtopic somewhere else
+pnly eith ntfsprogs from dapper and totally unsupported
+:d nice
+ah k thnx
+i have backported that one in my repo ;) amarok :p
+1 a ndy80 yes can you help me with my wifi prob how do you switch channel $ depends on your client :) this is #ubuntu not #windows-bashing sry it was stronger then myself -x- this is a support room offtopic somewhere else pnly eith ntfsprogs from dapper and totally unsupported :d nice ah k thnx i have backported that one in my repo ;) amarok :p
+not finals yet i swear i am reading up on all the lectures at this point not just the last one :\
+i m at cygwin s site and i m a bit confused is it as similar to remote desktop
+it is a unix like environment for windows as such it will run x as a client allowing you to remotely connect to x running on some remote computer .. now that i think about it i do n't recommend it unless you enjoy a challenge
+if you just want to ssh into your server try putty :) yeah its possible but it involves getting x running under cygwin and then setting up a remote connection with it it will involve reading a few howtos
+1 not finals yet i swear i am reading up on all the lectures at this point not just the last one :\ i m at cygwin s site and i m a bit confused is it as similar to remote desktop it is a unix like environment for windows as such it will run x as a client allowing you to remotely connect to x running on some remote computer .. now that i think about it i do n't recommend it unless you enjoy a challenge if you just want to ssh into your server try putty :) yeah its possible but it involves getting x running under cygwin and then setting up a remote connection with it it will involve reading a few howtos
+i need help so desperately updated stuff rebooted and now i cant get out of prompt cant get out of tty1 screen im new with linux so please help me someone :(
+anyone help me please ??
+this is so crowded in this window can someone write me in pm
+it gets better if you filter out quits joints nick changes etc
+help me please i cant reach to desktop of ubuntu where during booting does it get stuck
+1 i need help so desperately updated stuff rebooted and now i cant get out of prompt cant get out of tty1 screen im new with linux so please help me someone :( anyone help me please ?? this is so crowded in this window can someone write me in pm it gets better if you filter out quits joints nick changes etc help me please i cant reach to desktop of ubuntu where during booting does it get stuck
+this is the message i get when i try to install wine tools graphic interface
+winetools
+depends xdialog but it is not installable
+i havent :-)
+brb :-)
+that s not what i asked is it
+did it occur to you i was suggesting youtry doing so and report the error
+well it s in universe
+that s why i asked ...
+easiest is in synaptic settings repositories - just tick all the boxes thanks a load .. got both of them now wine tools and xdialog
+1 this is the message i get when i try to install wine tools graphic interface winetools depends xdialog but it is not installable i havent :-) brb :-) that s not what i asked is it did it occur to you i was suggesting youtry doing so and report the error well it s in universe that s why i asked ... easiest is in synaptic settings repositories - just tick all the boxes thanks a load .. got both of them now wine tools and xdialog
+re :d
+i ve got the following in my xorg logs
+audit thu nov __number__ 12:15 __number__ __number__ __number__ x client __number__ rejected from local host ( uid=0 gid=0 pid=1961 )
+does that ring any bells
+that does n't give much information can you pastebin your log
+__url__ the logs look clean
+1 re :d i ve got the following in my xorg logs audit thu nov __number__ 12:15 __number__ __number__ __number__ x client __number__ rejected from local host ( uid=0 gid=0 pid=1961 ) does that ring any bells that does n't give much information can you pastebin your log __url__ the logs look clean
+is there a tool to control network manager from the command line
+hi
+you can use __path__ it will supercede network manager
+thanks but i really want to switch between nm profiles from a shellscript
+the file will be used between all profiles
+__path__
+__path__ can hold wireless profiles as well as pppoe profiles
+__path__
+sure
+typo sorry but then network manager cannot run simultaneously
+1 is there a tool to control network manager from the command line hi you can use __path__ it will supercede network manager thanks but i really want to switch between nm profiles from a shellscript the file will be used between all profiles __path__ __path__ can hold wireless profiles as well as pppoe profiles __path__ sure typo sorry but then network manager cannot run simultaneously
+however i think there is valid configuration in my __path__ conf to get it to listen on eth2
+when i run it it fails __path__ says not configured to run on any interfaces
+i m having a problem with dhcpd hello
+1 however i think there is valid configuration in my __path__ conf to get it to listen on eth2 when i run it it fails __path__ says not configured to run on any interfaces i m having a problem with dhcpd hello
+what happened
+apt-cache search wine -- only shows dummy packages
+you ca n't install wine
+i do n't know what package to install
+to install wine just wine
+apt-get install wine please do n't paste in here what version of ubuntu are you using
+1 what happened apt-cache search wine -- only shows dummy packages you ca n't install wine i do n't know what package to install to install wine just wine apt-get install wine please do n't paste in here what version of ubuntu are you using
+hutch you gotta set it to usb headset manuly in the ubuntu sound settings
+hutch i had that issue easy fix
+great what is it :d
+in preferences>sounds>devices i have all them set as usb sennheiser headset oss and the test button works but firefox still doesnt work
+currently sound playing in cedega and hence it wont play atm but earlier when cedega wasnt running other apps would play fine but not firefox
+grr
+i think flash is being odd
+maybe i will try reinstall it or something
+flash and or firefox
+how do i go about doing that nah i did flash after firefox
+couldnt find package flash-nonfree
+why ca n't ubuntu play from two applications at once
+well its a usb device
+mine is too its a sennheiser pc166 but when i have __number__ applications open playing sound both stutter horribly does it have to do with usb using oss instead of alsa
+when i choose usb sennheiser ( alsa ) and try the test button it gives an error and cant play back
+how do i switch it to alisa
+reinstalled flash youtube still no sound and the video is *slightly* choppy
+ok how can i update them or whatever
+lol so where should i go from here
+i just installed ubuntu __number__ lol what speakers :/ these are like $150us headphones lol
+1 hutch you gotta set it to usb headset manuly in the ubuntu sound settings hutch i had that issue easy fix great what is it :d in preferences>sounds>devices i have all them set as usb sennheiser headset oss and the test button works but firefox still doesnt work currently sound playing in cedega and hence it wont play atm but earlier when cedega wasnt running other apps would play fine but not firefox grr i think flash is being odd maybe i will try reinstall it or something flash and or firefox how do i go about doing that nah i did flash after firefox couldnt find package flash-nonfree why ca n't ubuntu play from two applications at once well its a usb device mine is too its a sennheiser pc166 but when i have __number__ applications open playing sound both stutter horribly does it have to do with usb using oss instead of alsa when i choose usb sennheiser ( alsa ) and try the test button it gives an error and cant play back how do i switch it to alisa reinstalled flash youtube still no sound and the video is *slightly* choppy ok how can i update them or whatever lol so where should i go from here i just installed ubuntu __number__ lol what speakers :/ these are like $150us headphones lol
+i like spatial nautilus how do i set it that way
+go to preferences file management
+yes and then
+go to behaviour tab
+not seeing what i think i want to see in behaviour tab
+does this make nautilus behave the way that it does in debian by default
+i unchecked always open in browser window but it is still not spatial nautilus
+thats didnt work
+it works for me ??
+i just did a brand-new fresh install of ubuntu so ...
+do i need to restart x for this to work no not needed
+1 i like spatial nautilus how do i set it that way go to preferences file management yes and then go to behaviour tab not seeing what i think i want to see in behaviour tab does this make nautilus behave the way that it does in debian by default i unchecked always open in browser window but it is still not spatial nautilus thats didnt work it works for me ?? i just did a brand-new fresh install of ubuntu so ... do i need to restart x for this to work no not needed
+hi i need some help to solve a subprocess post-installation script returned error exit status __number__ message during app installation
+what happens if you type sudo apt-get install -f
+never look back ;-)
+i wo n't do you need infrared remote control support
+1 hi i need some help to solve a subprocess post-installation script returned error exit status __number__ message during app installation what happens if you type sudo apt-get install -f never look back ;-) i wo n't do you need infrared remote control support
+i suspect zsnes is non-free software
+erm zsnes is free
+erm looks like freeware ... and not free-software
+not a lot
+you get above
+turns out znses is entirely free software but it uses i386 asm code .... it mill be able to run in amd64 but it may or may-not be a fiddle ;-)
+its probably best to just run i386 ( which works fine on amd64 ) until true mixed-i386-amd64 comes out ;-) ( maybe in edgy )
+is that going to be possible i was n't aware of that
+well its in one of the edgy spec things
+would it be possible to upgrade from 32bit dapper to 64bit edgy though
+not sure ... probablfy need the system/side reinstalling but be able to keep your homedir/settings most-likely
+that will work ;-)
+which cd ver etc
+desktop-live or desktop-alternate
+erm normal i did n't know what the alternate one was
+that will work ... ;-)
+the desktop is a live cd .... like knoppix ... and has an installer that is ( sometimes ) problematic at present but usually fine ... not suitable for upgrading an existing install
+the alternate cd is text-based installer/upgrader like previous ubuntu cds
+maybe ... if its not a supported raid then that wont work ;-) -- it might be a sis fakeraid
+if its one of those fakeraid things then you can just use linux raid instead also the alternate cd is necessary to do lvm/raid installs
+1 i suspect zsnes is non-free software erm zsnes is free erm looks like freeware ... and not free-software not a lot you get above turns out znses is entirely free software but it uses i386 asm code .... it mill be able to run in amd64 but it may or may-not be a fiddle ;-) its probably best to just run i386 ( which works fine on amd64 ) until true mixed-i386-amd64 comes out ;-) ( maybe in edgy ) is that going to be possible i was n't aware of that well its in one of the edgy spec things would it be possible to upgrade from 32bit dapper to 64bit edgy though not sure ... probablfy need the system/side reinstalling but be able to keep your homedir/settings most-likely that will work ;-) which cd ver etc desktop-live or desktop-alternate erm normal i did n't know what the alternate one was that will work ... ;-) the desktop is a live cd .... like knoppix ... and has an installer that is ( sometimes ) problematic at present but usually fine ... not suitable for upgrading an existing install the alternate cd is text-based installer/upgrader like previous ubuntu cds maybe ... if its not a supported raid then that wont work ;-) -- it might be a sis fakeraid if its one of those fakeraid things then you can just use linux raid instead also the alternate cd is necessary to do lvm/raid installs
+on the new ubuntu installer when do i set the root password
+the root password is unset ( therefore disabled ) by default for security reasons
+we would encourage you to use sudo when you need root functionality :)
+that s pretty good i guess but does n't sudo have security risks
+like what
+not sure myself but i ve read some things on it i think the idea for ubuntu is to stop users from running as root for their normal user
+1 on the new ubuntu installer when do i set the root password the root password is unset ( therefore disabled ) by default for security reasons we would encourage you to use sudo when you need root functionality :) that s pretty good i guess but does n't sudo have security risks like what not sure myself but i ve read some things on it i think the idea for ubuntu is to stop users from running as root for their normal user
+i m thinking that permissions may not be set properly .... but i m not sure
+did you specify the location of __path__ in __path__
+yes
+ah so it s mounted already
+are you able to run a program like nano from the command line
+yes
+the computer seems to start normally until i get "... fail !" and then it drops to a command line login
+what happens when you do sudo __path__ d/gdm start
+i get a fail
+specifically what is the error message
+i do n't get verbose error messages
+just nothing happens
+it says starting gnome display manager fail
+the file __path__ __number__ log might contain hints
+nothing seems out of the ordinary in there paste the output of this in the channel grep __path__ __path__
+1 i m thinking that permissions may not be set properly .... but i m not sure did you specify the location of __path__ in __path__ yes ah so it s mounted already are you able to run a program like nano from the command line yes the computer seems to start normally until i get "... fail !" and then it drops to a command line login what happens when you do sudo __path__ d/gdm start i get a fail specifically what is the error message i do n't get verbose error messages just nothing happens it says starting gnome display manager fail the file __path__ __number__ log might contain hints nothing seems out of the ordinary in there paste the output of this in the channel grep __path__ __path__
+is there a link to say what has how much support
+ubuntu packages are usually synced to debian sid during the beta cycle
+what version is sid
+sid is always unstable
+however many packages are completely replaced or heavily modified ( for good or worse ) debian __number__ has __number__ __number__
+1 is there a link to say what has how much support ubuntu packages are usually synced to debian sid during the beta cycle what version is sid sid is always unstable however many packages are completely replaced or heavily modified ( for good or worse ) debian __number__ has __number__ __number__
+what is the name of the kernel package i thought it was linux-image but ubuntu says that is not installed
+dpkg -l | grep linux
+that flows way out of my screen ( no x seeing nvidia doe not work )
+how
+shift page up
+you can still scroll up
+should i have linux-image installed
+but pipe it through less dpke -l | grep linux-image | less
+nice :) i have worked for years not knowing how to scroll
+i live in the console hardly start x at all so less is a must hmm what do you do for web browsing
+1 what is the name of the kernel package i thought it was linux-image but ubuntu says that is not installed dpkg -l | grep linux that flows way out of my screen ( no x seeing nvidia doe not work ) how shift page up you can still scroll up should i have linux-image installed but pipe it through less dpke -l | grep linux-image | less nice :) i have worked for years not knowing how to scroll i live in the console hardly start x at all so less is a must hmm what do you do for web browsing
+has anyone had firefox freezing up on them mine is tweaked so hard i do n't even know where to start
+run it from the command line and look at the verbose error-output
+no way that makes too much sense ok i will try to make it freeze again
+ya chrome is win that s ok we all have our open-source love affairs
+1 has anyone had firefox freezing up on them mine is tweaked so hard i do n't even know where to start run it from the command line and look at the verbose error-output no way that makes too much sense ok i will try to make it freeze again ya chrome is win that s ok we all have our open-source love affairs
+ibut is not to set permis right
+i intend chmod use is possible under ntfs
+ljl thanks
+i do n't think so
+it s not a filesystem driver though just a stand-alone application which might be a good thing ... depends what you want
+your nickname certainly does ring a bell
+you say rc local is not executed why
+that script please
+__path__ local not __path__ local - but i suppose that was a typo try grep rc local __path__ d/* does that show up with anything
+uh add that repository to your sources list
+i think so :)
+that will be because the other repo has a more recent version of the package i guess
+it
+it s likely that you can achieve that with pinning but i ca n't guide you there
+__url__
+thank you that seems like what you want just change * into the package name i guess
+1 ibut is not to set permis right i intend chmod use is possible under ntfs ljl thanks i do n't think so it s not a filesystem driver though just a stand-alone application which might be a good thing ... depends what you want your nickname certainly does ring a bell you say rc local is not executed why that script please __path__ local not __path__ local - but i suppose that was a typo try grep rc local __path__ d/* does that show up with anything uh add that repository to your sources list i think so :) that will be because the other repo has a more recent version of the package i guess it it s likely that you can achieve that with pinning but i ca n't guide you there __url__ thank you that seems like what you want just change * into the package name i guess
+does anyone know how to write a mode line for xorg
+is that what gtf does ( guessing )
+i ll have a look
+@2330 lol
+:)
+you in sa or nt
+act
+huh your not on central time s
+nope aedt here greetings from tomorrow :p
+lol :p
+i thought you must be central because of this line -> ( 23:30 __number__ ) bimberi kamping_kaiser @2330 lol
+ah no i knew because of ... adl4 internode ...
+ah ok ;) i didnt think of that :)
+1 does anyone know how to write a mode line for xorg is that what gtf does ( guessing ) i ll have a look @2330 lol :) you in sa or nt act huh your not on central time s nope aedt here greetings from tomorrow :p lol :p i thought you must be central because of this line -> ( 23:30 __number__ ) bimberi kamping_kaiser @2330 lol ah no i knew because of ... adl4 internode ... ah ok ;) i didnt think of that :)
+login failed __number__ login incorrect
+hang on i ll retry
+should be agora then agoramin
+what directories does it allow you to see
+wait please
+__path__ --- working
+i can see the home dir including dot files etc
+seems to be working fine
+does it let you up directory and can you see clemire or cydanderwon
+does it let you up directory and can you see clemire or cydanderson
+hang on
+yup
+also a garyc dir
+__number__ dirs including ftp
+i wonder if proftp can limit this
+i m in your home dir mwuhahahaha
+i know vsftpd claims it can restrict people to only their own home dir
+do n't worry i promise not to tell ;) )
+try to make dir or upload i think it will tell you that you do n't have permission
+sorry i logged out :( i expect you are right
+1 login failed __number__ login incorrect hang on i ll retry should be agora then agoramin what directories does it allow you to see wait please __path__ --- working i can see the home dir including dot files etc seems to be working fine does it let you up directory and can you see clemire or cydanderwon does it let you up directory and can you see clemire or cydanderson hang on yup also a garyc dir __number__ dirs including ftp i wonder if proftp can limit this i m in your home dir mwuhahahaha i know vsftpd claims it can restrict people to only their own home dir do n't worry i promise not to tell ;) ) try to make dir or upload i think it will tell you that you do n't have permission sorry i logged out :( i expect you are right
+i mean a messanger
+yahoo n msn
+kopete
+there s about a million others konqueror chromium arora epiphany w3m elinks links lynx opera ...
+which do u suggest most user friendly and like more secure firefox
+1 i mean a messanger yahoo n msn kopete there s about a million others konqueror chromium arora epiphany w3m elinks links lynx opera ... which do u suggest most user friendly and like more secure firefox
+i m currently installing java6 with apt-get and it s stuck at a blue screen with the license agreement there s an ok at the bottom but clicking on it or pressing enter or ctrl+o or alt+o wo n't change a thing what can i do it s stuck there
+space
+and return to accept
+it s useless press tab to select it
+1 i m currently installing java6 with apt-get and it s stuck at a blue screen with the license agreement there s an ok at the bottom but clicking on it or pressing enter or ctrl+o or alt+o wo n't change a thing what can i do it s stuck there space and return to accept it s useless press tab to select it
+seems happy to read it and to change the partitions though it warns the number of cylinders for this disk is set to __number__ there is nothing wrong with that but this is larger than __number__ and could in certain setups cause problems with :..
+it s wonderful mapping new trails huh :)
+:) -- it installed happily on my ibm x40 but i did the whole drive then anyway how were those partitions created originally
+1 seems happy to read it and to change the partitions though it warns the number of cylinders for this disk is set to __number__ there is nothing wrong with that but this is larger than __number__ and could in certain setups cause problems with :.. it s wonderful mapping new trails huh :) :) -- it installed happily on my ibm x40 but i did the whole drive then anyway how were those partitions created originally
+ubuntu
+on the fly
+i reboo
+it didnt come up again
+just reboot your box
+still not there
+i d pm you
+are you on the pm yeah
+1 ubuntu on the fly i reboo it didnt come up again just reboot your box still not there i d pm you are you on the pm yeah
+plz answer if you can hear me :o
+to remove the other copy you compiled go to the source dir and make remove or make uninstall
+go into the source dir and type more makefile ( i think that s it ... )
+thanks :)
+ok ... ( forgot __path__ <)
+note - anything with clean in it isnt what you want
+youll see headers for each operation that make can run on that source ball
+look for anything that would be like remove or uninstall
+trash/pkg-config- __number__ __path__ __number__ 8/ libs/libgli b.a
+does it cause you any functional problems
+yes ... ca n't compile gtk+ programs oh that sucks ... not really sure other than removing it what else you should do
+1 plz answer if you can hear me :o to remove the other copy you compiled go to the source dir and make remove or make uninstall go into the source dir and type more makefile ( i think that s it ... ) thanks :) ok ... ( forgot __path__ <) note - anything with clean in it isnt what you want youll see headers for each operation that make can run on that source ball look for anything that would be like remove or uninstall trash/pkg-config- __number__ __path__ __number__ 8/ libs/libgli b.a does it cause you any functional problems yes ... ca n't compile gtk+ programs oh that sucks ... not really sure other than removing it what else you should do
+a fatal error occurred
+the application kde daemon ( kded4 ) crashed and caused the signal __number__ ( sigsegv)
+guys help
+what were you doing when this happened i do n't know much but people need background info i was just on here and the kde thing poped up
+1 a fatal error occurred the application kde daemon ( kded4 ) crashed and caused the signal __number__ ( sigsegv) guys help what were you doing when this happened i do n't know much but people need background info i was just on here and the kde thing poped up
+who do you enable
+composite extension
+i mean how do you enable compostie exensiooon
