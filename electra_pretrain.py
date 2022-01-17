@@ -14,8 +14,9 @@ from transformers import TrainingArguments, AdamW
 from data_utils import MyConfig, ElectraDataProcessor, ElectraDataCollator
 from train_utils import ElectraModel, ElectraLoss, ElectraTrainer, ElectraWandbCallback
 
-os.environ['WANDB_PROJECT'] = 'electra_pretrain'
+os.environ['WANDB_PROJECT'] = 'electra_pretrain_large'
 os.environ['WANDB_WATCH'] = 'false'
+
 
 c = MyConfig({
     'base_run_name': 'origin', # run_name = {base_run_name}_{seed}
@@ -29,8 +30,9 @@ c = MyConfig({
     'datas': ['my_text'],
 
     'logger': 'wandb',
-    'num_proc': 1,
+    'preprocess_dsets_num_proc': 1,
     'num_workers': 8,
+    'n_gpus': 8,
 })
 
 
@@ -74,7 +76,7 @@ gen_config.intermediate_size = disc_config.intermediate_size // generator_size_d
 hf_tokenizer = ElectraTokenizerFast.from_pretrained(f"google/electra-{c.size}-generator")
 
 # Path to data
-Path('./datasets').mkrdir(exist_ok=True)
+Path('./datasets').mkdir(exist_ok=True)
 Path('./checkpoints/pretrain').mkdir(exist_ok=True, parents=True)
 
 dsets = []
@@ -84,7 +86,7 @@ if 'wikipedia' in c.datas:
     print('load/download wiki dataset')
     wiki = datasets.load_dataset('wikipedia', '20200501.en', cache_dir='./datasets')['train']
     print('load/create data from wiki dataset for ELECTRA')
-    e_wiki = ElectraProcessor(wiki).map(cache_file_name=f"electra_wiki_{c.max_length}.arrow", num_proc=c.num_proc)
+    e_wiki = ElectraProcessor(wiki).map(cache_file_name=f"electra_wiki_{c.max_length}.arrow", num_proc=c.preprocess_dsets_num_proc)
     dsets.append(e_wiki)
 
 # OpenWebText
@@ -92,14 +94,14 @@ if 'openwebtext' in c.datas:
     print('load/download OpenWebText Corpus')
     owt = datasets.load_dataset('openwebtext', cache_dir='./datasets')['train']
     print('load/create data from OpenWebText Corpus for ELECTRA')
-    e_owt = ElectraProcessor(owt).map(cache_file_name=f"electra_owt_{c.max_length}.arrow", num_proc=c.num_proc)
+    e_owt = ElectraProcessor(owt).map(cache_file_name=f"electra_owt_{c.max_length}.arrow", num_proc=c.preprocess_dsets_num_proc)
     dsets.append(e_owt)
 
 if 'my_text' in c.datas:
     print('load/download my text')
     mt = datasets.load_dataset("text", data_files={"train": "urlsf_subset00-944_data.txt"}, cache_dir='./datasets')['train']
     print('load/create data from my text for ELECTRA')
-    e_mytext = ElectraProcessor(mt).map(cache_file_name=f"electra_mt_{c.max_length}.arrow", num_proc=c.num_proc)
+    e_mytext = ElectraProcessor(mt).map(cache_file_name=f"electra_mt_{c.max_length}.arrow", num_proc=c.preprocess_dsets_num_proc)
     dsets.append(e_mytext)
 
 assert len(dsets) == len(c.datas)
@@ -126,7 +128,7 @@ electra_model = ElectraModel(generator, discriminator, hf_tokenizer, sampling_me
 electra_loss_func = ElectraLoss(loss_weights=(1.0, 50.0))
 
 electra_data_collator = ElectraDataCollator(hf_tokenizer, c.max_length)
-AdamW_no_bias  = AdamW(electra_model.parameters(), lr=c.lr, betas=(0.9, 0.99), eps=1e-5, weight_decay=0.01, correct_bias=False)
+AdamW_no_bias = AdamW(electra_model.parameters(), lr=c.lr, betas=(0.9, 0.99), eps=1e-5, weight_decay=0.01, correct_bias=False)
 
 print('Initialize args')
 training_args = TrainingArguments(
@@ -138,14 +140,14 @@ training_args = TrainingArguments(
     save_total_limit=20, # If a value is passed, will limit the total amount of checkpoints. Deletes the older checkpoints in output_dir.
     dataloader_num_workers=c.num_workers,
     remove_unused_columns=False,
-    per_device_train_batch_size=c.size // 8,  # batch size per device during training
+    per_device_train_batch_size=c.bs // c.n_gpus,  # batch size per device during training
     max_grad_norm=1.0,
     warmup_steps=10000,
-    max_steps=1000000,   # 100k
-    seed = c.seed,
+    max_steps=10000000,   # 1M
+    seed=c.seed,
     fp16=True,
     local_rank=c.local_rank,
-    # report_to=['wandb'],
+    # report_to=['wandb'],  # this arg is not required, using ElectraWandbCallback
     # deepspeed='ds_config.json',
 )
 
