@@ -14,7 +14,7 @@ distributed training supported
         --base_run_name electra_wiki
     # AdamW optimizer with no bias correction
     ```
-    <br >
+<br >
 
 - Using deepspeed
     ```
