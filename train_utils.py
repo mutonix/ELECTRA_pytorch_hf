@@ -26,15 +26,19 @@ class ElectraModel(nn.Module):
         self.gumbel_dist = torch.distributions.gumbel.Gumbel(torch.tensor(0., device=device, dtype=dtype), 
                                                             torch.tensor(1., device=device, dtype=dtype))
 
-    def forward(self, masked_inputs, sentA_lengths, is_mlm_applied, labels):
+    def forward(self, input_ids, sentA_length):
         """
         masked_inputs (Tensor[int]): (N, L)
         sentA_lenths (Tensor[int]): (N, )
         is_mlm_applied (Tensor[boolean]): (N, L), True for positions chosen by mlm probability 
         labels (Tensor[int]): (N, L), -100 for positions where are not mlm applied
         """
+        with torch.no_grad():
+            masked_inputs, labels, is_mlm_applied = self._mask_tokens(input_ids, 
+                                                                      mask_token_index =self.hf_tokenizer.mask_token_id, 
+                                                                      special_token_indices=self.hf_tokenizer.all_special_ids) 
+            attention_mask, token_type_ids = self._get_pad_mask_and_token_type(masked_inputs, sentA_length)
 
-        attention_mask, token_type_ids = self._get_pad_mask_and_token_type(masked_inputs, sentA_lengths)
 
         gen_output = self.generator(masked_inputs, attention_mask, token_type_ids)
         # Prediction scores of the language modeling head (before softmax) (N, L, vocab_size)
@@ -67,15 +71,37 @@ class ElectraModel(nn.Module):
         return ((mlm_gen_logits, disc_logits, is_replaced, attention_mask, is_mlm_applied), labels,
                                     {'gen_acc': gen_acc.float(), 'mlm_mask_num': mlm_mask_num})
 
-    def _get_pad_mask_and_token_type(self, input_ids, sentA_lengths):
+    def _get_pad_mask_and_token_type(self, input_ids, sentA_length):
         """
         Only cost you about 500 µs for (128, 128) on GPU, but so that your dataset won't need to save attention_mask and token_type_ids and won't be unnecessarily large, thus, prevent cpu processes loading batches from consuming lots of cpu memory and slow down the machine. 
         """
         attention_mask = input_ids != self.hf_tokenizer.pad_token_id
         seq_len = input_ids.shape[1]
-        token_type_ids = torch.tensor([([0]*len + [1]*(seq_len-len)) for len in sentA_lengths.tolist()],  
+        token_type_ids = torch.tensor([([0]*len + [1]*(seq_len-len)) for len in sentA_length.tolist()],  
                                         device=input_ids.device)
         return attention_mask, token_type_ids
+
+    def _mask_tokens(self, inputs, mask_token_index, special_token_indices, mlm_probability=0.15, original_prob=0.15, ignore_index=-100):
+
+        device = inputs.device
+        labels = inputs.clone() 
+
+        # Get positions to apply mlm (mask/replace/not changed). (mlm_probability)
+        probability_matrix = torch.full(labels.shape, mlm_probability, device=device)
+        special_tokens_mask = torch.full(inputs.shape, False, dtype=torch.bool, device=device)
+
+        for sp_id in special_token_indices:
+            special_tokens_mask = special_tokens_mask | (inputs == sp_id) 
+        probability_matrix.masked_fill_(special_tokens_mask, value=0.0) 
+        is_mlm_applied = torch.bernoulli(probability_matrix).bool()
+        labels[~is_mlm_applied] = ignore_index  # We only compute loss on mlm applied tokens
+
+        # mask  (mlm_probability * (1-orginal_prob))
+        mask_prob = 1 - original_prob # 0.85
+        mask_token_mask = torch.bernoulli(torch.full(labels.shape, mask_prob, device=device)).bool() & is_mlm_applied
+        inputs[mask_token_mask] = mask_token_index 
+
+        return inputs, labels, is_mlm_applied
 
     def sample(self, logits):
         "Reimplement gumbel softmax cuz there is a bug in torch.nn.functional.gumbel_softmax when fp16 (https://github.com/pytorch/pytorch/issues/41663). Gumbel softmax is equal to what official ELECTRA code do, standard gumbel dist. = -ln(-ln(standard uniform dist.))"
@@ -103,7 +129,7 @@ class ElectraLoss():
         gen_loss = self.gen_loss_fc(mlm_gen_logits.float(), targ_ids[is_mlm_applied]) * self.loss_weights[0]
 
         disc_logits_flat = disc_logits.masked_select(non_pad) # [float](N, L) -> 1d tensor
-        is_replaced_flat = is_replaced.masked_select(non_pad) # [bool](N, L) -> 1d tensor
+        with torch.no_grad(): is_replaced_flat = is_replaced.masked_select(non_pad) # [bool](N, L) -> 1d tensor
 
         # caculate metrics: disc_real_mlm_acc, disc_acc
         with torch.no_grad():
@@ -113,7 +139,12 @@ class ElectraLoss():
 
         disc_loss = self.disc_loss_fc(disc_logits_flat.float(), is_replaced_flat.float()) * self.loss_weights[1]
         return (gen_loss + disc_loss, 
-                {'disc_real_mlm_acc': disc_real_mlm_acc, 'disc_acc': disc_acc, 'gen_loss': gen_loss, 'disc_loss': disc_loss})
+                {
+                'disc_real_mlm_acc': disc_real_mlm_acc, 
+                'disc_acc': disc_acc, 
+                'gen_loss': gen_loss, 
+                'disc_loss': disc_loss
+                })
 
 class ElectraTrainer(Trainer):
     def __init__(self, *args, **kwargs):
@@ -145,11 +176,7 @@ class TrainMetric():
     def update(self, metric_dict: Dict):
         for k, v in metric_dict.items(): setattr(self, k, v)
             
-
 class ElectraWandbCallback(WandbCallback):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
     def on_log(self, args, state, control, model=None, logs=None, **kwargs):
         if self._wandb is None:
             return

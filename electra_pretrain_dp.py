@@ -33,7 +33,7 @@ c = MyConfig({
     'preprocess_dsets_num_proc': 1,
     'num_workers': 8,
     'n_gpus': 8, # only used for caculating the per device batch size
-    'grad_acc_step':16,  
+    'grad_acc_step': 16,  # `large` for 8 Tesla-V100 GPUs RAM 32GB
 })
 
 
@@ -130,7 +130,7 @@ electra_model = ElectraModel(generator, discriminator, hf_tokenizer, sampling_me
 electra_loss_func = ElectraLoss(loss_weights=(1.0, 50.0))
 
 electra_data_collator = ElectraDataCollator(hf_tokenizer, c.max_length)
-AdamW_no_bias = AdamW(electra_model.parameters(), lr=c.lr, betas=(0.9, 0.99), eps=1e-5, weight_decay=0.01, correct_bias=False)
+# AdamW_no_bias = AdamW(electra_model.parameters(), lr=c.lr, betas=(0.9, 0.99), eps=1e-5, weight_decay=0.01, correct_bias=False)
 
 print('Initialize args')
 training_args = TrainingArguments(
@@ -150,7 +150,12 @@ training_args = TrainingArguments(
     seed=c.seed,
     fp16=True,
     local_rank=c.local_rank,
-    # deepspeed='ds_config.json',
+    deepspeed='ds_config.json', # only works on 5 <= gcc <= 7
+    learning_rate=c.lr,
+    adam_beta1=0.9,
+    adam_beta2=0.99,
+    adam_epsilon=1e-5,
+    weight_decay=0.01,
     # report_to=['wandb'],  # not needed, for using `ElectraWandbCallback`
 )
 
@@ -160,7 +165,7 @@ trainer = ElectraTrainer(
     args=training_args,                  # training arguments, defined above
     train_dataset=electra_dset,          # training dataset
     data_collator=electra_data_collator,
-    optimizers=(AdamW_no_bias, None),
+    # optimizers=(AdamW_no_bias, None),
     callbacks=[ElectraWandbCallback],
     loss_func=electra_loss_func,
 )

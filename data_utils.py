@@ -89,44 +89,19 @@ class ElectraDataCollator():
         self._max_length = max_length
 
     def __call__(self, samples):
-        input_ids, sentA_lengths = [], []
+        input_ids, sentA_length = [], []
 
         for s in samples:
             input_ids.append(s['input_ids'])
-            sentA_lengths.append(s['sentA_length'].unsqueeze(0))
+            sentA_length.append(s['sentA_length'].unsqueeze(0))
 
         input_ids = pad_sequence(input_ids, batch_first=True, padding_value=self.hf_tokenizer.pad_token_id).long()
-        sentA_lengths = torch.cat(sentA_lengths)
+        sentA_length = torch.cat(sentA_length)
 
-        masked_inputs, labels, is_mlm_applied = self._mask_tokens(input_ids, 
-                                                                  mask_token_index =self.hf_tokenizer.mask_token_id, 
-                                                                  special_token_indices=self.hf_tokenizer.all_special_ids) 
         return {
-            'masked_inputs':  masked_inputs, 
-            'sentA_lengths':  sentA_lengths, 
-            'is_mlm_applied': is_mlm_applied, 
-            'labels':         labels
+            'input_ids':  input_ids, 
+            'sentA_length':  sentA_length, 
         }
 
-    def _mask_tokens(self, inputs, mask_token_index, special_token_indices, mlm_probability=0.15, original_prob=0.15, ignore_index=-100):
 
-        device = inputs.device
-        labels = inputs.clone() 
-
-        # Get positions to apply mlm (mask/replace/not changed). (mlm_probability)
-        probability_matrix = torch.full(labels.shape, mlm_probability, device=device)
-        special_tokens_mask = torch.full(inputs.shape, False, dtype=torch.bool, device=device)
-
-        for sp_id in special_token_indices:
-            special_tokens_mask = special_tokens_mask | (inputs == sp_id) 
-        probability_matrix.masked_fill_(special_tokens_mask, value=0.0) 
-        is_mlm_applied = torch.bernoulli(probability_matrix).bool()
-        labels[~is_mlm_applied] = ignore_index  # We only compute loss on mlm applied tokens
-
-        # mask  (mlm_probability * (1-orginal_prob))
-        mask_prob = 1 - original_prob # 0.85
-        mask_token_mask = torch.bernoulli(torch.full(labels.shape, mask_prob, device=device)).bool() & is_mlm_applied
-        inputs[mask_token_mask] = mask_token_index 
-
-        return inputs, labels, is_mlm_applied
 
